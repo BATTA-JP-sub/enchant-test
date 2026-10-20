@@ -521,7 +521,7 @@ customEnchants:
     enchantmentTable: true
   Infusion:
     displayName: "&7Infusion"
-    description: "Breaks all blocks in the nearby area"
+    description: "Breaks blocks in a 3x3 area"
     type: "Pickaxe"
     trigger: "BLOCK_BREAK"
     levels:
@@ -537,16 +537,16 @@ customEnchants:
         tiers:
         - "Elite"
         effects:
-        - "INFUSION:2:FALSE"
+        - "INFUSION:1:FALSE"
         conditions: []
       3:
         chance: 100.0
         tiers:
         - "Legendary"
         effects:
-        - "INFUSION:3:FALSE"
+        - "INFUSION:1:FALSE"
         conditions: []
-    enabled: false
+    enabled: true
     enchantmentTable: true
   Ninja:
     displayName: "&7Ninja"
@@ -1365,6 +1365,289 @@ customEnchants:
         - "Common"
         effects:
         - "TELEPATHY"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Etheral:
+    displayName: "&7Etheral"
+    description: "Gain haste upon killing mobs"
+    type: "Sword"
+    trigger: "ENTITY_KILL"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:FAST_DIGGING:1:5"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Insomnia:
+    displayName: "&7Insomnia"
+    description: "Gives slowness, slow swinging and confusion"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 20.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:SLOW:1:5:TARGET"
+        - "POTION:CONFUSION:1:5:TARGET"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Thunderingblow:
+    displayName: "&7ThunderingBlow"
+    description: "Can cause smite effect on your enemy"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 15.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "LIGHTNING:TARGET"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Headless:
+    displayName: "&7Headless"
+    description: "Victims have a chance of dropping their head on death"
+    type: "Sword"
+    trigger: "PLAYER_KILL"
+    levels:
+      1:
+        chance: 30.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "DROP_HEAD:TARGET"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Obliterate:
+    displayName: "&7Obliterate"
+    description: "Extreme knockback"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "KNOCKBACK:3"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Epicness:
+    displayName: "&7Epicness"
+    description: "Gives particles and sound effects"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "EFFECT:PARTICLE:SPELL:TARGET"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Famine:
+    displayName: "&7Famine"
+    description: "A chance to give your opponent the hunger effect"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 25.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:HUNGER:1:5:TARGET"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Featherweight:
+    displayName: "&7Featherweight"
+    description: "A chance to give a burst of haste"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 20.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:FAST_DIGGING:1:3"
+        conditions: []
+    enabled: true
+    enchantmentTable: true
+  Shuffle:
+    displayName: "&7Shuffle"
+    description: "Shuffles opponent's hotbar"
+    type: "Chestplate"
+    trigger: "DEFENCE"
+    levels:
+      1:
+        chance: 10.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "SHUFFLE_HOTBAR:TARGET"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Takeoff:
+    displayName: "&7Takeoff"
+    description: "Allows flying when worn"
+    type: "Boots"
+    trigger: "PASSIVE:20"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "FLY"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Jellylegs:
+    displayName: "&7Jellylegs"
+    description: "Chance to negate fall damage"
+    type: "Boots"
+    trigger: "FALL"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "DAMAGE_MODIFIER:0"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Lifebloom:
+    displayName: "&7Lifebloom"
+    description: "Completely heals allies and truces on your death"
+    type: "Leggings"
+    trigger: "PLAYER_DEATH"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "AURA:ALLY:10:HEAL:20:TARGET"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Ward:
+    displayName: "&7Ward"
+    description: "A chance to absorb enemy damage and heal you"
+    type: "Chestplate"
+    trigger: "DEFENCE"
+    levels:
+      1:
+        chance: 15.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "HEAL:2"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Curse:
+    displayName: "&7Curse"
+    description: "Gives strength, slowness and resistance at low hp"
+    type: "Chestplate"
+    trigger: "PASSIVE:20"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:INCREASE_DAMAGE:1:5"
+        - "POTION:SLOW:1:5"
+        - "POTION:DAMAGE_RESISTANCE:1:5"
+        conditions:
+        - "ISWEARING"
+        - "PLAYER_HEALTH <= 10"
+    enabled: true
+    enchantmentTable: true
+  Endershift:
+    displayName: "&7Endershift"
+    description: "Gives speed/health boost at low hp"
+    type: "Helmet"
+    trigger: "PASSIVE:20"
+    levels:
+      1:
+        chance: 100.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "POTION:SPEED:1:5"
+        - "ADD_EXTRA_HEALTH:1:20"
+        conditions:
+        - "ISWEARING"
+        - "PLAYER_HEALTH <= 6"
+    enabled: true
+    enchantmentTable: true
+  Molten:
+    displayName: "&7Molten"
+    description: "Chance of setting your attacker ablaze"
+    type: "Chestplate"
+    trigger: "DEFENCE"
+    levels:
+      1:
+        chance: 20.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "FIRE:60:TARGET"
+        conditions:
+        - "ISWEARING"
+    enabled: true
+    enchantmentTable: true
+  Vampire:
+    displayName: "&7Vampire"
+    description: "Drains health from your target and heals you"
+    type: "Sword"
+    trigger: "PLAYER_DAMAGE"
+    levels:
+      1:
+        chance: 15.0
+        tiers:
+        - "Common"
+        effects:
+        - "STEAL_HEALTH:1:TARGET"
+        conditions: []
+      2:
+        chance: 30.0
+        tiers:
+        - "Elite"
+        effects:
+        - "STEAL_HEALTH:2:TARGET"
+        conditions: []
+      3:
+        chance: 50.0
+        tiers:
+        - "Legendary"
+        effects:
+        - "STEAL_HEALTH:3:TARGET"
         conditions: []
     enabled: true
     enchantmentTable: true
